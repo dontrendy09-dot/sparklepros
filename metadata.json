@@ -1,0 +1,6 @@
+{
+  "name": "Sparkle Pros | Cleaning Services Coimbatore",
+  "description": "Professional deep cleaning & steam cleaning services in Coimbatore for homes, apartments, villas, and businesses by Sparkle Pros.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
