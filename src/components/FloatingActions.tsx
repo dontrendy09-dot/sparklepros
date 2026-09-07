@@ -7,7 +7,7 @@ export default function FloatingActions() {
   return (
     <div
       id="floating-actions"
-      className="fixed right-5 sm:right-7 bottom-7 z-50 flex flex-col items-center gap-3.5"
+      className="hidden md:flex fixed right-6 sm:right-8 bottom-8 z-50 flex-col items-center gap-3.5"
     >
       {/* Phone Call Floating Circular Icon Button */}
       <motion.a

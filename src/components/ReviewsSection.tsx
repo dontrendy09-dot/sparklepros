@@ -60,18 +60,18 @@ export default function ReviewsSection() {
   return (
     <section
       id="reviews-section"
-      className="py-24 sm:py-36 px-6 sm:px-12 bg-[#FBFBFA] relative overflow-hidden"
+      className="py-16 sm:py-36 px-4 sm:px-12 bg-[#FBFBFA] relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
+        <div className="text-center mb-10 sm:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B2464]/10 text-[#5B2464] text-xs font-bold tracking-wider uppercase mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B2464]/10 text-[#5B2464] text-xs font-bold tracking-wider uppercase mb-3 sm:mb-4"
           >
             <span>Verified Experiences</span>
           </motion.div>
@@ -80,24 +80,24 @@ export default function ReviewsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417] leading-[1.08] max-w-3xl mx-auto"
+            className="font-display text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417] leading-[1.08] max-w-3xl mx-auto"
           >
             “A cleaner experience from start to finish.”
           </motion.h2>
-          <p className="text-sm sm:text-base text-[#121417]/60 mt-4">
+          <p className="text-xs sm:text-base text-[#121417]/60 mt-3 sm:mt-4">
             Curated from verified Google Business reviews in Coimbatore.
           </p>
         </div>
 
         {/* Animated Testimonial Card */}
-        <div className="relative bg-white rounded-[36px] p-8 sm:p-14 border border-black/6 shadow-[0_25px_60px_-15px_rgba(91,36,100,0.08)] overflow-hidden">
+        <div className="relative bg-white rounded-2xl sm:rounded-[36px] p-5 sm:p-14 border border-black/6 shadow-[0_15px_45px_-15px_rgba(91,36,100,0.08)] overflow-hidden">
           {/* Subtle Watermark Quote */}
-          <Quote className="absolute top-6 right-8 w-28 h-28 text-[#5B2464]/[0.04] pointer-events-none" />
+          <Quote className="absolute top-4 right-4 sm:top-6 sm:right-8 w-20 h-20 sm:w-28 sm:h-28 text-[#5B2464]/[0.04] pointer-events-none" />
 
           {/* Stepper Header */}
-          <div className="flex items-center justify-between mb-8 pb-6 border-b border-black/6">
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-[#5B2464] text-white">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-black/6">
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <span className="font-mono text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full bg-[#5B2464] text-white">
                 Review 0{currentIndex + 1} of 0{REVIEWS.length}
               </span>
               <div className="flex items-center text-amber-400">
@@ -108,7 +108,7 @@ export default function ReviewsSection() {
                     animate={{ scale: 1 }}
                     transition={{ delay: i * 0.05 + 0.1 }}
                   >
-                    <Star className="w-4 h-4 fill-amber-400" />
+                    <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400" />
                   </motion.div>
                 ))}
               </div>
@@ -118,14 +118,14 @@ export default function ReviewsSection() {
             <div className="flex items-center gap-2">
               <button
                 onClick={prevReview}
-                className="h-11 w-11 rounded-full border border-black/10 flex items-center justify-center text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all active:scale-95"
+                className="h-9 w-9 sm:h-11 sm:w-11 rounded-full border border-black/10 flex items-center justify-center text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all active:scale-95 cursor-pointer"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={nextReview}
-                className="h-11 w-11 rounded-full border border-black/10 flex items-center justify-center text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all active:scale-95"
+                className="h-9 w-9 sm:h-11 sm:w-11 rounded-full border border-black/10 flex items-center justify-center text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all active:scale-95 cursor-pointer"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -134,7 +134,7 @@ export default function ReviewsSection() {
           </div>
 
           {/* Animated Review Slide */}
-          <div className="min-h-[160px] sm:min-h-[140px] flex items-center relative overflow-hidden">
+          <div className="min-h-[140px] flex items-center relative overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={review.id}
@@ -145,7 +145,7 @@ export default function ReviewsSection() {
                 exit="exit"
                 className="w-full flex flex-col justify-between"
               >
-                <p className="font-display text-xl sm:text-2xl md:text-3xl font-medium text-[#121417] leading-relaxed mb-8">
+                <p className="font-display text-lg sm:text-2xl md:text-3xl font-medium text-[#121417] leading-relaxed mb-6 sm:mb-8">
                   “{review.quote}”
                 </p>
 

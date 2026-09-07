@@ -51,16 +51,16 @@ export default function BookingModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-xl bg-white rounded-[32px] p-6 sm:p-10 shadow-2xl border border-black/8 my-8 text-[#121417] max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-[32px] p-5 sm:p-10 shadow-2xl border border-black/8 my-4 sm:my-8 text-[#121417] max-h-[92vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 h-10 w-10 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center text-[#121417] transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center text-[#121417] transition-colors cursor-pointer"
           aria-label="Close modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         {isSubmitted ? (
@@ -199,7 +199,7 @@ export default function BookingModal({
                     >
                       {LOCATIONS.map((loc) => (
                         <option key={loc.name} value={loc.name}>
-                          {loc.name} ({loc.pincode})
+                          {loc.name}
                         </option>
                       ))}
                       <option value="Other Area in Coimbatore">Other Coimbatore Area</option>

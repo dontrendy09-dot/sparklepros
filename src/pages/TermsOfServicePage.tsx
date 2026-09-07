@@ -15,7 +15,7 @@ export default function TermsOfServicePage({
   }, []);
 
   return (
-    <div className="pt-32 pb-24 px-6 sm:px-12 max-w-4xl mx-auto">
+    <div className="pt-24 sm:pt-32 pb-20 sm:pb-24 px-4 sm:px-12 max-w-4xl mx-auto">
       {/* Back button */}
       <button
         onClick={onNavigateHome}

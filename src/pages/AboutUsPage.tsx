@@ -36,26 +36,26 @@ export default function AboutUsPage({ onOpenBooking, onNavigateContact }: AboutU
     { number: '1,200+', label: 'Homes & Villas Cleaned', sub: 'Across Coimbatore' },
     { number: '4.9★', label: 'Google Verified Rating', sub: 'From real local clients' },
     { number: '100%', label: 'In-House Crew', sub: 'Zero subcontracting' },
-    { number: '25+', label: 'Pincodes Served', sub: 'Daily dispatch fleet' },
+    { number: '25+', label: 'Localities Served', sub: 'Daily dispatch fleet' },
   ];
 
   return (
-    <div className="pt-28 pb-12">
+    <div className="pt-24 sm:pt-28 pb-12">
       {/* Page Hero Header - Standardized Layout matching Service Page */}
-      <section className="px-6 sm:px-12 py-14 max-w-7xl mx-auto">
+      <section className="px-4 sm:px-12 py-10 sm:py-14 max-w-7xl mx-auto">
         <div className="max-w-3xl">
-          <div className="mb-4">
+          <div className="mb-3 sm:mb-4">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#5B2464]">
               ABOUT US • CRAFTSMANSHIP & MECHANIZED EXCELLENCE
             </span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.02] mb-6">
+          <h1 className="font-display text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.04] mb-4 sm:mb-6">
             Elevating the standard of <br />
             <span className="text-[#5B2464]">cleanliness in Tamil Nadu.</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
             Engineered to replace rushed, chemical-heavy cleaning services with European-grade 140°C thermal steam technology, mechanized rotary scrubbing, and genuine in-house craftsmanship across Coimbatore and the Kongu region.
           </p>
         </div>
@@ -84,36 +84,36 @@ export default function AboutUsPage({ onOpenBooking, onNavigateContact }: AboutU
       </section>
 
       {/* Vision and Mission Section - Normal Familiar Card Design */}
-      <section className="px-6 sm:px-12 max-w-7xl mx-auto mb-28">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+      <section className="px-4 sm:px-12 max-w-7xl mx-auto mb-16 sm:mb-28">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#5B2464]/10 text-[#5B2464] text-xs font-bold uppercase tracking-wider mb-3">
             OUR PURPOSE & COMMITMENT
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-extrabold text-[#121417] tracking-tight">
+          <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#121417] tracking-tight">
             Our Vision & Mission
           </h2>
-          <p className="text-base text-[#121417]/65 mt-3 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#121417]/65 mt-2 sm:mt-3 leading-relaxed">
             The foundational principles guiding every home visit, machine calibration, and verified sanitization across Tamil Nadu.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Vision Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-black/10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_45px_rgba(91,36,100,0.08)] transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-black/10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_45px_rgba(91,36,100,0.08)] transition-all flex flex-col justify-between">
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center mb-6">
-                <Compass className="w-7 h-7" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center mb-5 sm:mb-6">
+                <Compass className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
 
               <span className="text-xs font-bold uppercase tracking-widest text-[#5B2464] block mb-2">
                 OUR VISION
               </span>
 
-              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#121417] leading-snug mb-4">
+              <h3 className="font-display text-xl sm:text-3xl font-extrabold text-[#121417] leading-snug mb-3 sm:mb-4">
                 Pioneering non-toxic, scientifically clean living as the standard for every home.
               </h3>
 
-              <p className="text-sm sm:text-base text-[#121417]/70 leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-[#121417]/70 leading-relaxed mb-6 sm:mb-8">
                 We envision urban households and commercial facilities where deep hygiene is achieved without breathing hazardous volatile fumes. By standardizing German 140°C thermal vapor extraction and mechanical rotary scrubbing, we eliminate dust mites and pathogens at the root—protecting infants, elderly family members, and premium interior surfaces.
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function AboutUsPage({ onOpenBooking, onNavigateContact }: AboutU
           </div>
 
           {/* Mission Card */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-black/10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_45px_rgba(91,36,100,0.08)] transition-all flex flex-col justify-between">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-black/10 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_45px_rgba(91,36,100,0.08)] transition-all flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center mb-6">
                 <Target className="w-7 h-7" />
@@ -205,30 +205,30 @@ export default function AboutUsPage({ onOpenBooking, onNavigateContact }: AboutU
       </section>
 
       {/* Core Values / Why Sparkle Pros */}
-      <section className="px-6 sm:px-12 py-20 bg-[#F6F6F2] mb-28">
+      <section className="px-4 sm:px-12 py-14 sm:py-20 bg-[#F6F6F2] mb-16 sm:mb-28">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-3 block">
               OUR GUIDING PRINCIPLES
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#121417]">
+            <h2 className="font-display text-2xl sm:text-5xl font-extrabold text-[#121417]">
               Why homeowners & facility managers trust Sparkle Pros
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {values.map((val, idx) => {
               const Icon = val.icon;
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-[32px] p-8 sm:p-10 border border-black/6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-6 items-start"
+                  className="bg-white rounded-2xl sm:rounded-[32px] p-6 sm:p-10 border border-black/6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-4 sm:gap-6 items-start"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-7 h-7" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#121417] mb-2">
+                    <h3 className="font-display text-lg sm:text-2xl font-bold text-[#121417] mb-1.5 sm:mb-2">
                       {val.title}
                     </h3>
                     <p className="text-sm sm:text-base text-[#121417]/70 leading-relaxed">
@@ -243,19 +243,19 @@ export default function AboutUsPage({ onOpenBooking, onNavigateContact }: AboutU
       </section>
 
       {/* Meet Our Process */}
-      <section className="px-6 sm:px-12 max-w-7xl mx-auto mb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="px-4 sm:px-12 max-w-7xl mx-auto mb-16 sm:mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
           <div className="lg:col-span-6">
             <span className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-3 block">
               LOCAL COIMBATORE ROOTS
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-[#121417] mb-6">
+            <h2 className="font-display text-2xl sm:text-5xl font-extrabold text-[#121417] mb-4 sm:mb-6">
               Founded to protect homes from hard water & dust.
             </h2>
-            <p className="text-base text-[#121417]/70 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-[#121417]/70 leading-relaxed mb-4 sm:mb-6">
               Coimbatore homes face unique cleaning challenges — heavy mineral calcification from Siruvani and groundwater, fine industrial dust near highway corridors, and moisture build-up in closed apartments.
             </p>
-            <p className="text-base text-[#121417]/70 leading-relaxed mb-8">
+            <p className="text-sm sm:text-base text-[#121417]/70 leading-relaxed mb-6 sm:mb-8">
               We developed specialized acidic-balanced descaling formulations that dissolve hard water without etching luxury Italian marble, and high-heat steam extraction that revives sofa upholstery in 2 hours.
             </p>
 

@@ -49,15 +49,15 @@ export default function InstagramStrip() {
   const seamlessReels = [...GERMAN_FOOTAGE_REELS, ...GERMAN_FOOTAGE_REELS, ...GERMAN_FOOTAGE_REELS];
 
   return (
-    <section id="instagram-section" className="py-24 sm:py-32 bg-[#FBFBFA] overflow-hidden border-t border-b border-black/6">
+    <section id="instagram-section" className="py-16 sm:py-32 bg-[#FBFBFA] overflow-hidden border-t border-b border-black/6">
       {/* Minimal Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 mb-12 sm:mb-16">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-12 mb-8 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-2 sm:mb-3">
               LIVE ON-SITE FOOTAGE
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417]">
+            <h2 className="font-display text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417]">
               Watch our crew in action.
             </h2>
           </div>
@@ -66,7 +66,7 @@ export default function InstagramStrip() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-black/10 text-xs font-bold text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all shadow-xs self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white border border-black/10 text-xs font-bold text-[#121417] hover:bg-[#5B2464] hover:text-white hover:border-[#5B2464] transition-all shadow-xs self-start md:self-auto active:scale-95"
           >
             <Instagram className="w-4 h-4" />
             <span>@sparklepros_cbe</span>
@@ -82,8 +82,8 @@ export default function InstagramStrip() {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Soft edge fade masks */}
-        <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#FBFBFA] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#FBFBFA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-[#FBFBFA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-[#FBFBFA] to-transparent z-10 pointer-events-none" />
 
         <motion.div
           animate={{
@@ -97,7 +97,7 @@ export default function InstagramStrip() {
               ease: 'linear',
             },
           }}
-          className="flex gap-6 w-max py-2"
+          className="flex gap-4 sm:gap-6 w-max py-2"
         >
           {seamlessReels.map((reel, index) => (
             <a
@@ -105,7 +105,7 @@ export default function InstagramStrip() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-64 sm:w-72 flex-shrink-0 aspect-[9/15] rounded-[28px] overflow-hidden bg-zinc-900 border border-black/8 shadow-xs hover:shadow-[0_20px_40px_rgba(91,36,100,0.15)] transition-all duration-300 block"
+              className="group relative w-56 sm:w-72 flex-shrink-0 aspect-[9/15] rounded-2xl sm:rounded-[28px] overflow-hidden bg-zinc-900 border border-black/8 shadow-xs hover:shadow-[0_20px_40px_rgba(91,36,100,0.15)] transition-all duration-300 block active:scale-98"
             >
               {/* Asset Footage Thumbnail */}
               <img

@@ -33,7 +33,7 @@ export default function Footer({ onOpenBooking, onNavigatePage }: FooterProps) {
   };
 
   return (
-    <footer id="main-footer" className="bg-white text-[#121417] pt-16 sm:pt-20 pb-28 md:pb-14 px-6 sm:px-12 border-t border-black/8">
+    <footer id="main-footer" className="bg-white text-[#121417] pt-14 sm:pt-20 pb-28 md:pb-14 px-4 sm:px-12 border-t border-black/8">
       <div className="max-w-7xl mx-auto">
         {/* Main Grid: Left Brand & Contact Block + Right Navigation Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-14">

@@ -23,26 +23,26 @@ export default function InteractiveGallery({ onOpenBooking }: InteractiveGallery
       });
 
   return (
-    <section id="gallery-section" className="py-24 sm:py-32 px-6 sm:px-12 bg-[#FBFBFA]">
+    <section id="gallery-section" className="py-16 sm:py-32 px-4 sm:px-12 bg-[#FBFBFA]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 pb-8 border-b border-black/8 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 pb-6 sm:pb-8 border-b border-black/8 gap-5">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-3 block">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#5B2464] mb-2 sm:mb-3 block">
               PORTFOLIO SNAPSHOTS
             </span>
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417]">
+            <h2 className="font-display text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417]">
               A glimpse of the work.
             </h2>
           </div>
 
-          {/* Minimal Category Pills */}
-          <div className="flex flex-wrap items-center gap-2">
+          {/* Minimal Category Pills - Smooth horizontal swipe on mobile */}
+          <div className="-mx-4 px-4 overflow-x-auto flex items-center gap-2 py-1 scrollbar-none">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 active:scale-95 cursor-pointer ${
                   selectedCategory === cat
                     ? 'bg-[#5B2464] text-white shadow-sm'
                     : 'bg-white border border-black/8 text-[#121417]/70 hover:text-[#5B2464] hover:border-[#5B2464]/30'
@@ -55,7 +55,7 @@ export default function InteractiveGallery({ onOpenBooking }: InteractiveGallery
         </div>
 
         {/* Minimal Modern Cards Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           <AnimatePresence>
             {filteredItems.map((item) => (
               <motion.div
@@ -64,8 +64,8 @@ export default function InteractiveGallery({ onOpenBooking }: InteractiveGallery
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                className="group relative bg-white rounded-[28px] overflow-hidden border border-black/8 shadow-sm hover:shadow-[0_20px_40px_rgba(91,36,100,0.08)] transition-all cursor-pointer flex flex-col"
+                transition={{ duration: 0.35 }}
+                className="group relative bg-white rounded-2xl sm:rounded-[28px] overflow-hidden border border-black/8 shadow-sm hover:shadow-[0_20px_40px_rgba(91,36,100,0.08)] transition-all cursor-pointer flex flex-col"
                 onClick={() => onOpenBooking(item.category)}
               >
                 {/* Image Container */}

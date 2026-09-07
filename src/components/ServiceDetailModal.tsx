@@ -21,45 +21,45 @@ export default function ServiceDetailModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white rounded-[32px] overflow-hidden shadow-2xl border border-black/8 my-8 text-[#121417] max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-[32px] overflow-hidden shadow-2xl border border-black/8 my-4 sm:my-8 text-[#121417] max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Media Banner */}
-        <div className="relative aspect-[16/9] w-full bg-black/10 flex-shrink-0">
+        <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-black/10 flex-shrink-0">
           <img
             src={service.image}
             alt={service.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 h-10 w-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center transition-colors backdrop-blur-md"
+            className="absolute top-3 right-3 sm:top-5 sm:right-5 h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center transition-colors backdrop-blur-md cursor-pointer"
             aria-label="Close details"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           {/* Title on image */}
-          <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold uppercase tracking-wider">
-                {service.number} • Sparkle Pros Specialized
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+            <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+              <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] sm:text-xs font-bold uppercase tracking-wider">
+                {service.number} • Specialized
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#5B2464] text-white text-xs font-semibold">
+              <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#5B2464] text-white text-[10px] sm:text-xs font-semibold">
                 {service.duration}
               </span>
             </div>
-            <h3 className="font-display text-2xl sm:text-4xl font-extrabold">
+            <h3 className="font-display text-xl sm:text-4xl font-extrabold leading-tight">
               {service.name}
             </h3>
           </div>
         </div>
 
         {/* Scrollable Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
+        <div className="p-4 sm:p-8 overflow-y-auto space-y-4 sm:space-y-6">
           {/* Overview */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#5B2464] mb-2">

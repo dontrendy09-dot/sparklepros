@@ -44,34 +44,34 @@ export default function ServicesPage({ onOpenBooking, onSelectServiceModal }: Se
   });
 
   return (
-    <div className="pt-28 pb-12">
+    <div className="pt-24 sm:pt-28 pb-12">
       {/* Page Hero Header - Standardized Layout */}
-      <section className="px-6 sm:px-12 py-14 max-w-7xl mx-auto">
+      <section className="px-4 sm:px-12 py-10 sm:py-14 max-w-7xl mx-auto">
         <div className="max-w-3xl">
-          <div className="mb-4">
+          <div className="mb-3 sm:mb-4">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#5B2464]">
               SERVICE ARCHITECTURE • DIRECT FLEET DISPATCH
             </span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.02] mb-6">
+          <h1 className="font-display text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.04] mb-4 sm:mb-6">
             Comprehensive cleaning for <br />
             <span className="text-[#5B2464]">every room and surface.</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
             From thermal dry-steam upholstery recovery to whole-villa mechanized rotary scrubbing, explore our specialized cleaning services crafted for Coimbatore and Kongu region properties.
           </p>
         </div>
 
         {/* Filter Tabs & Search Bar */}
-        <div className="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-black/8">
-          <div className="flex flex-wrap gap-2">
+        <div className="mt-8 sm:mt-12 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-black/8">
+          <div className="flex overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 gap-2 pb-1 sm:pb-0 flex-nowrap sm:flex-wrap">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
-                className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                className={`whitespace-nowrap flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   filter === cat.id
                     ? 'bg-[#5B2464] text-white shadow-sm'
                     : 'bg-white text-[#121417]/70 hover:bg-[#5B2464]/5 hover:text-[#5B2464] border border-black/6'
@@ -96,15 +96,15 @@ export default function ServicesPage({ onOpenBooking, onSelectServiceModal }: Se
       </section>
 
       {/* Services Grid */}
-      <section className="px-6 sm:px-12 max-w-7xl mx-auto mb-28">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="px-4 sm:px-12 max-w-7xl mx-auto mb-16 sm:mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map((service, idx) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-[32px] overflow-hidden border border-black/8 shadow-sm hover:shadow-xl hover:border-[#5B2464]/30 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-2xl sm:rounded-[32px] overflow-hidden border border-black/8 shadow-sm hover:shadow-xl hover:border-[#5B2464]/30 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Image Card Header */}
@@ -124,7 +124,7 @@ export default function ServicesPage({ onOpenBooking, onSelectServiceModal }: Se
                 </div>
 
                 {/* Content */}
-                <div className="p-6 sm:p-8">
+                <div className="p-5 sm:p-8">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold text-[#5B2464] uppercase tracking-wider">
                       Sparkle Pros Standard

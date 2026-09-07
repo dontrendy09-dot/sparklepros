@@ -64,16 +64,16 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
     <section
       id="process-section"
       ref={containerRef}
-      className="py-24 sm:py-36 bg-[#F6F6F2] relative overflow-hidden"
+      className="py-16 sm:py-32 bg-[#F6F6F2] relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 sm:px-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-12">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-20 sm:mb-28">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 sm:mb-24">
           <div>
             <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#5B2464]/10 text-[#5B2464] text-xs font-bold uppercase tracking-wider mb-4">
               LIVE STATUS TIMELINE
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417] leading-[1.06]">
+            <h2 className="font-display text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] text-[#121417] leading-[1.06]">
               From booking <br />
               <span className="font-serif italic font-normal text-[#5B2464]">to clean.</span>
             </h2>
@@ -93,16 +93,16 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
         {/* Vertical Timeline with Scroll-Linked Animation */}
         <div className="relative">
           {/* Background Rail Track */}
-          <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-1 bg-black/10 -translate-x-1/2 rounded-full hidden sm:block" />
+          <div className="absolute left-6 md:left-1/2 top-4 bottom-4 w-1 bg-black/10 -translate-x-1/2 rounded-full hidden md:block" />
 
           {/* Animated Glowing Progress Line */}
           <motion.div
             style={{ scaleY, transformOrigin: 'top' }}
-            className="absolute left-6 md:left-1/2 top-4 bottom-4 w-1.5 bg-gradient-to-b from-[#5B2464] via-[#742E80] to-[#5B2464] -translate-x-1/2 rounded-full shadow-[0_0_12px_rgba(91,36,100,0.5)] z-10 hidden sm:block"
+            className="absolute left-6 md:left-1/2 top-4 bottom-4 w-1.5 bg-gradient-to-b from-[#5B2464] via-[#742E80] to-[#5B2464] -translate-x-1/2 rounded-full shadow-[0_0_12px_rgba(91,36,100,0.5)] z-10 hidden md:block"
           />
 
           {/* Timeline Nodes & Step Cards */}
-          <div className="flex flex-col gap-12 sm:gap-20">
+          <div className="flex flex-col gap-6 sm:gap-16">
             {PROCESS_STEPS.map((step, idx) => {
               const Icon = getStepIcon(step.iconName);
               const meta = STEP_STATUSES[idx] || STEP_STATUSES[0];
@@ -111,25 +111,31 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
               return (
                 <div
                   key={step.number}
-                  className="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16"
+                  className="relative flex flex-col md:flex-row items-center justify-between gap-6 md:gap-16"
                 >
                   {/* Left Side (Desktop): Card for Even, Empty for Odd */}
                   <div className={`w-full md:w-1/2 ${isEven ? 'md:text-right' : 'md:order-last'}`}>
                     <motion.div
-                      initial={{ opacity: 0, x: isEven ? -30 : 30, y: 15 }}
+                      initial={{ opacity: 0, x: isEven ? -24 : 24, y: 15 }}
                       whileInView={{ opacity: 1, x: 0, y: 0 }}
-                      viewport={{ once: true, margin: '-60px' }}
-                      transition={{ duration: 0.5, delay: 0.1 }}
-                      className="bg-white rounded-[28px] p-7 sm:p-9 border border-black/8 shadow-[0_10px_35px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_45px_rgba(91,36,100,0.1)] hover:border-[#5B2464]/30 transition-all group"
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 0.45, delay: 0.1 }}
+                      className="bg-white rounded-2xl sm:rounded-[28px] p-5 sm:p-9 border border-black/8 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(91,36,100,0.1)] hover:border-[#5B2464]/30 transition-all group"
                     >
-                      {/* Status Tag Pill */}
-                      <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase mb-4 ${meta.color}`}>
-                        <span className="w-1.5 h-1.5 rounded-full bg-current animate-ping" />
-                        <span>STATUS: {meta.status}</span>
+                      {/* Top Bar: Status Tag Pill + Mobile Step Icon */}
+                      <div className={`flex items-center justify-between gap-2 mb-3 sm:mb-4 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                        <div className={`inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-bold tracking-wider uppercase ${meta.color}`}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-current animate-ping" />
+                          <span>STATUS: {meta.status}</span>
+                        </div>
+                        {/* Mobile Step Icon */}
+                        <div className="w-7 h-7 rounded-full bg-[#5B2464]/10 text-[#5B2464] flex md:hidden items-center justify-center flex-shrink-0">
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
                       </div>
 
                       {/* Header */}
-                      <div className={`flex items-center gap-3 mb-2 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                      <div className={`flex items-center gap-2 sm:gap-3 mb-2 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
                         <span className="font-mono text-xs font-extrabold text-[#5B2464]">
                           STAGE {step.number}
                         </span>
@@ -139,24 +145,24 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
                         </span>
                       </div>
 
-                      <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#121417] tracking-tight mb-3">
+                      <h3 className="font-display text-xl sm:text-3xl font-extrabold text-[#121417] tracking-tight mb-2 sm:mb-3">
                         {step.title}
                       </h3>
 
-                      <p className="text-sm text-[#121417]/70 leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-[#121417]/70 leading-relaxed mb-4">
                         {step.desc}
                       </p>
 
                       {/* SLA / Benchmark Footer */}
-                      <div className={`pt-4 border-t border-black/6 flex items-center gap-2 text-xs text-[#121417]/50 font-medium ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                      <div className={`pt-3 sm:pt-4 border-t border-black/6 flex items-center gap-2 text-xs text-[#121417]/50 font-medium ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
                         <Check className="w-3.5 h-3.5 text-[#5B2464]" />
                         <span>{meta.sla}</span>
                       </div>
                     </motion.div>
                   </div>
 
-                  {/* Center Node on Timeline Rail */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 hidden sm:flex">
+                  {/* Center Node on Timeline Rail (Desktop only) */}
+                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 items-center justify-center z-20 hidden md:flex">
                     <motion.div
                       initial={{ scale: 0.6, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -177,12 +183,12 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
         </div>
 
         {/* Bottom Booking Banner */}
-        <div className="mt-20 sm:mt-28 p-8 sm:p-12 rounded-[36px] bg-[#5B2464] text-white shadow-[0_20px_60px_rgba(91,36,100,0.25)] flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-14 sm:mt-28 p-6 sm:p-12 rounded-2xl sm:rounded-[36px] bg-[#5B2464] text-white shadow-[0_20px_60px_rgba(91,36,100,0.25)] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 sm:gap-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-purple-200 block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-purple-200 block mb-1.5 sm:mb-2">
               ZERO ADVANCE PAYMENT REQUIRED
             </span>
-            <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            <h3 className="font-display text-xl sm:text-3xl font-extrabold text-white leading-tight">
               Ready to initialize your cleaning pipeline?
             </h3>
             <p className="text-xs sm:text-sm text-white/80 mt-1">
@@ -192,7 +198,7 @@ export default function ProcessTimeline({ onOpenBooking }: ProcessTimelineProps)
 
           <button
             onClick={onOpenBooking}
-            className="px-8 py-4 rounded-full bg-white text-[#5B2464] text-sm sm:text-base font-bold tracking-wide hover:bg-purple-50 transition-all flex items-center gap-2.5 shadow-md hover:scale-105 active:scale-95 flex-shrink-0"
+            className="w-full sm:w-auto justify-center px-8 py-3.5 sm:py-4 rounded-full bg-white text-[#5B2464] text-sm sm:text-base font-bold tracking-wide hover:bg-purple-50 transition-all flex items-center gap-2.5 shadow-md active:scale-95 flex-shrink-0 cursor-pointer"
           >
             <span>Lock Your Date & Time</span>
             <ArrowRight className="w-4 h-4" />

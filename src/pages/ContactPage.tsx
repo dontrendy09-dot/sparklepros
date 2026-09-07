@@ -39,36 +39,36 @@ export default function ContactPage({ onOpenBooking }: ContactPageProps) {
   };
 
   return (
-    <div className="pt-28 pb-12">
+    <div className="pt-24 sm:pt-28 pb-12">
       {/* Header - Standardized Hero Layout */}
-      <section className="px-6 sm:px-12 py-14 max-w-7xl mx-auto">
+      <section className="px-4 sm:px-12 py-10 sm:py-14 max-w-7xl mx-auto">
         <div className="max-w-3xl">
-          <div className="mb-4">
+          <div className="mb-3 sm:mb-4">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#5B2464]">
               DISPATCH & INQUIRY HUB • KONGU REGION
             </span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.02] mb-6">
+          <h1 className="font-display text-3xl sm:text-6xl lg:text-[76px] font-extrabold tracking-[-0.035em] text-[#121417] leading-[1.04] mb-4 sm:mb-6">
             Let’s talk clean. <br />
             <span className="text-[#5B2464]">Directly in Coimbatore.</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-xl text-[#121417]/70 leading-relaxed max-w-2xl">
             Reach out for transparent quotes, commercial facility inspections, or urgent deep-cleaning dispatches across Coimbatore and the Kongu region.
           </p>
         </div>
       </section>
 
       {/* Main Content Grid: Left Contact Info Cards, Right Interactive Form */}
-      <section className="px-6 sm:px-12 max-w-7xl mx-auto mb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <section className="px-4 sm:px-12 max-w-7xl mx-auto mb-16 sm:mb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left: Contact Info & Direct Channels */}
           <div className="lg:col-span-5 space-y-6">
             {/* Direct Channels */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Phone */}
-              <div className="bg-white rounded-3xl p-6 border border-black/8 shadow-sm flex flex-col justify-between">
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-black/8 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-[#5B2464]/10 text-[#5B2464] flex items-center justify-center mb-4">
                     <Phone className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function ContactPage({ onOpenBooking }: ContactPageProps) {
               </div>
 
               {/* WhatsApp */}
-              <div className="bg-[#25D366]/10 rounded-3xl p-6 border border-[#25D366]/20 shadow-sm flex flex-col justify-between">
+              <div className="bg-[#25D366]/10 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#25D366]/20 shadow-sm flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center mb-4 shadow-sm">
                     <WhatsAppIcon className="w-5 h-5 text-white" />
@@ -113,7 +113,7 @@ export default function ContactPage({ onOpenBooking }: ContactPageProps) {
             </div>
 
             {/* Operating Hours & Guarantee */}
-            <div className="bg-[#F6F6F2] rounded-3xl p-6 border border-black/6">
+            <div className="bg-[#F6F6F2] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-black/6">
               <div className="flex items-center gap-3 mb-4">
                 <Clock className="w-5 h-5 text-[#5B2464]" />
                 <div>
@@ -134,7 +134,7 @@ export default function ContactPage({ onOpenBooking }: ContactPageProps) {
 
           {/* Right: Interactive Inquiry Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-[36px] p-8 sm:p-12 border border-black/8 shadow-xl">
+            <div className="bg-white rounded-2xl sm:rounded-[36px] p-5 sm:p-12 border border-black/8 shadow-xl">
               {submitted ? (
                 <div className="py-12 text-center flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-purple-100 text-[#5B2464] flex items-center justify-center mb-6">
@@ -232,7 +232,7 @@ export default function ContactPage({ onOpenBooking }: ContactPageProps) {
                         >
                           {LOCATIONS.map((loc) => (
                             <option key={loc.name} value={loc.name}>
-                              {loc.name} ({loc.pincode})
+                              {loc.name}
                             </option>
                           ))}
                           <option value="Other Area in Coimbatore">Other Coimbatore Area</option>
