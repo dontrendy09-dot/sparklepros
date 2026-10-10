@@ -157,8 +157,8 @@ After launch, add the site to [Google Search Console](https://search.google.com/
 ## Deploying to Vercel
 
 1. Push this repository to GitHub.
-2. In Vercel, **Add New → Project**, import the repository. The Next.js preset is detected automatically
-   (build `next build`, output handled by Vercel).
+2. In Vercel, **Add New → Project**, import the repository. `vercel.json` pins the framework to Next.js, so the
+   project builds correctly even if it was previously configured for the old Vite site.
 3. Under **Settings → Environment Variables**, add every variable from the table above for the
    *Production* environment (and *Preview* if you want the form to work on preview URLs).
 4. Deploy, then submit a test quote on the deployment URL and confirm the email arrives.
